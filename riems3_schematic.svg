@@ -1,0 +1,90 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="65mm"
+  height="31mm"
+  viewBox="0 0 440 216"
+>
+  <defs>
+    <!-- Arrowhead marker definition - Smaller size -->
+    <marker
+      id="arrowhead"
+      markerWidth="6"
+      markerHeight="4"
+      refX="6"
+      refY="2"
+      orient="auto"
+    >
+      <polygon points="0 0, 6 2, 0 4" fill="black" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: "Arial", "YouYuan", "Noto Sans SC", sans; font-size:
+    12pt; text-anchor: middle; fill: black; }
+    .box { fill: none; stroke: black; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: black; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    .small { font-size: 10pt; }
+    .label { font-size: 9.5pt; }
+    .bold { font-weight: bold; }
+  </style>
+
+  <!-- Atmos Node -->
+  <rect x="0" y="6" width="440" height="48" class="box" />
+  <text x="220" y="26" class="bold">大气分量</text>
+  <text x="220" y="44">WRF v4</text>
+
+  <!-- Coupler Node - Moved up -->
+  <!-- Top y = 74 + 40 = 114 -->
+  <rect x="10" y="74" width="140" height="48" class="box" />
+  <text x="80" y="94" class="bold">耦合器</text>
+  <text x="80" y="112">OASIS3</text>
+
+  <!-- Ocean Node - Moved up -->
+  <!-- Top y = 114 + 48 + 40 = 202 -->
+  <rect x="0" y="142" width="160" height="48" class="box" />
+  <text x="80" y="162" class="bold">海洋分量</text>
+  <text x="80" y="180">LiCOM-np</text>
+
+  <!-- Land Node - Moved up -->
+  <!-- Top y = 114 -->
+  <rect x="232" y="74" width="176" height="140" class="box" />
+  <text x="320" y="94" class="bold">陆面分量</text>
+  <text x="320" y="112">NoahMP-CN/AVIM-CN</text>
+
+  <!-- Dashed separator line approximation -->
+  <text x="320" y="124" class="small">------</text>
+
+  <text x="320" y="140" class="small">碳–氮循环</text>
+  <text x="320" y="156" class="small">植被水力学</text>
+  <text x="320" y="172" class="small">城市人为热</text>
+  <text x="320" y="188" class="small">土地利用变化</text>
+  <text x="320" y="204" class="small">数据同化</text>
+
+  <!-- Arrows: Atmos <-> Coupler -->
+  <line x1="50" y1="54" x2="50" y2="74" class="arrow" />
+  <line x1="110" y1="74" x2="110" y2="54" class="arrow" />
+
+  <!-- Arrows: Coupler <-> Ocean -->
+  <line x1="50" y1="122" x2="50" y2="142" class="arrow" />
+  <line x1="110" y1="142" x2="110" y2="122" class="arrow" />
+
+  <!-- Arrows: Atmos <-> Land -->
+  <!-- Left arrow (down) -->
+  <line x1="280" y1="54" x2="280" y2="74" class="arrow" />
+  <!-- Label right aligned, end at arrow, staggered up -->
+  <text x="230" y="68" text-anchor="end" class="label">动量/能量/水分</text>
+
+  <!-- Right arrow (up) -->
+  <line x1="300" y1="74" x2="300" y2="54" class="arrow" />
+  <!-- Label left aligned, start at arrow, staggered down -->
+  <text
+    x="360"
+    y="68"
+    text-anchor="start"
+    class="label"
+  >动量/能量/水分/碳氮</text>
+
+  <!-- Annotation next to Coupler -->
+  <text x="185" y="94" text-anchor="start" class="label">海气通量</text>
+  <text x="185" y="110" text-anchor="start" class="label">非通量订正</text>
+
+</svg>
